@@ -17,7 +17,7 @@ Pequeno armazém comercial focado na venda de bebidas, doces, salgadinhos e iten
 
 ## 2. Tecnologias
 
-* **Frontend**: HTML5, Bootstrap 5, CSS3, JavaScript.
+* **Frontend**: HTML5, Bootstrap 5, CSS3, Javascript.
 * **Backend**: PHP.
 * **Banco de Dados:** MySQL (modelagem via MySQL Workbench) utilizando o servidor local XAMPP.
 * **Segurança:** Conexão com o banco via PDO (PHP Data Objects) com uso estrito de Prepared Statements e Uso de hash para senha.
@@ -67,9 +67,11 @@ O banco é composto por três tabelas principais:
 ## 7. Estrutura da Interface
 
 1. Visão Geral da Interface
+   
 O sistema "Gestão de Estoque" utiliza uma arquitetura de interface inspirada no modelo SPA (Single Page Application). A navegação tradicional entre múltiplas páginas (ex: lista.php, form.php) foi substituída por uma única interface central consolidada, onde o conteúdo é alternado dinamicamente via JavaScript. O design é responsivo e construído sobre o framework Bootstrap 5.
 
-2. Estrutura da Página Central (index.php)
+3. Estrutura da Página Central (index.php)
+   
 A página atua como o único ponto de entrada para as operações de estoque e divide-se nos seguintes componentes estruturais:
 
 * Barra de Navegação Superior (Navbar):
@@ -82,6 +84,7 @@ A página atua como o único ponto de entrada para as operações de estoque e d
     --> Ver Categorias: Painel dedicado à visualização e gestão das categorias do sistema.
 
 3. Navegação de Ações (Sistema de Modais)
+
 A navegação vertical (troca de telas para formulários) foi inteiramente substituída por Modais sobrepostos.
 
 * Modais de Criação: Acessados por botões globais ("Cadastrar Produto", "Nova Categoria").
@@ -89,6 +92,7 @@ A navegação vertical (troca de telas para formulários) foi inteiramente subst
 * Modais de Exclusão: Exigem confirmação visual (exibindo o nome do item) antes de permitir a exclusão.
 
 4. Feedback Visual (Notificações)
+   
 As mensagens de sucesso e erro do servidor (ex: exclusão bloqueada, produto salvo) não recarregam uma tela em branco. O sistema utiliza um componente centralizado de Toasts Dinâmicos (includes/mensagens.php), que lê os parâmetros da URL ($_GET['sucesso'] ou $_GET['erro']) e exibe alertas flutuantes temporários no canto superior da tela, sobrepondo-se à interface sem interromper a navegação.
 
 

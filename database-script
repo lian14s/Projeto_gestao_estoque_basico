@@ -1,0 +1,62 @@
+CREATE DATABASE IF NOT EXISTS gestao_estoque;
+
+USE gestao_estoque;
+
+CREATE TABLE categorias (
+
+Id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+
+nome VARCHAR(100) NOT NULL
+
+);
+
+
+
+CREATE TABLE produtos(
+
+Id_produto INT AUTO_INCREMENT PRIMARY KEY,
+
+nome VARCHAR (100) NOT NULL,
+
+imagem_produto VARCHAR(200),
+
+preco_custo DECIMAL(10,2) NOT NULL,
+
+porcentagem_lucro DECIMAL(5,2) NOT NULL,
+
+preco_venda DECIMAL(10,2) NOT NULL,
+
+quantidade INT NOT NULL, 
+
+estoque_minimo INT NOT NULL,
+
+Id_categoria INT NOT NULL,
+
+CONSTRAINT fk_produto_categoria
+
+FOREIGN KEY (Id_categoria)
+
+REFERENCES categorias(Id_categoria)
+
+ON UPDATE CASCADE
+
+);
+
+
+
+CREATE TABLE usuario (
+
+Id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+
+usuario VARCHAR(45) NOT NULL,
+
+senha VARCHAR(255) NOT NULL
+
+);
+
+
+
+-- INSERT INTO usuario (usuario, senha) 
+
+-- VALUES ('gerente', '123456'); 
+
